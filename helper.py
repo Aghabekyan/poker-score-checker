@@ -24,7 +24,7 @@ class PokerManager:
     def _is_straight_flush(self):
         return self._is_straight() and self._is_flush()
 
-    def _is_kare(self):
+    def _is_four_of_a_kind(self):
         ret_value = False
         for i in range(2):
             if self.sorted_cards_indexes.count(self.sorted_cards_indexes[0]) == 4:
@@ -51,7 +51,7 @@ class PokerManager:
     def check_score(self):
         if self._is_royal_flush(): return 'Royal Flush'
         if self._is_straight_flush(): return 'Straight Flush'
-        if self._is_kare(): return 'Kare'
+        if self._is_four_of_a_kind(): return 'Four of a kind'
         if self._is_full_house(): return 'Full House'
         if self._is_flush(): return 'Flush'
         if self._is_straight(): return 'Straight'

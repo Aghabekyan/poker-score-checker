@@ -58,7 +58,7 @@ if __name__ == '__main__':
 # print(poker._is_flush())
 # print(poker._is_straight_flush())
 # print(poker._is_royal_flush())
-# print(poker._is_kare())
+# print(poker._is_four_of_a_kind())
 # print(poker._is_full_house())
 
 # print(poker.check_score())
