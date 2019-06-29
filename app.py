@@ -4,16 +4,11 @@ import json
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return 'Hey, we have Flask in a Docker container!'
-
-
 @app.route('/check_score', methods=['POST'])
 def check_score():
-    data = json.loads(request.data)
-    poker = PokerManager(data)
     if request.method == 'POST':
+        data = json.loads(request.data)
+        poker = PokerManager(data)
         return poker.check_score()
 
 if __name__ == '__main__':
@@ -26,7 +21,7 @@ if __name__ == '__main__':
 
 
 
-
+# payload
 # arr = [
 #     {
 #         "card": "4",
@@ -49,18 +44,3 @@ if __name__ == '__main__':
 #         "type": 2
 #     }
 # ]
-
-
-# poker = PokerManager(arr)
-
-# print(poker.sorted_cards_indexes)
-# print(poker._is_straight())
-# print(poker._is_flush())
-# print(poker._is_straight_flush())
-# print(poker._is_royal_flush())
-# print(poker._is_four_of_a_kind())
-# print(poker._is_full_house())
-
-# print(poker.check_score())
-
-# print(poker._is_three_of_a_kind())
