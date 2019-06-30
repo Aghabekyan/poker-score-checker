@@ -41,7 +41,7 @@ class PokerManager:
         grouped_indexes_list = [ [k,]*v for k,v in grouped_indexes_dict.items()]
         return len(grouped_indexes_list) > 2 and (len(grouped_indexes_list[0]) == 3 or
                                                   len(grouped_indexes_list[1]) == 3 or 
-                                                  len(grouped_indexes_list[1]) == 3)
+                                                  len(grouped_indexes_list[2]) == 3)
 
     def _is_pair(self):
         grouped_indexes_dict = Counter(self.sorted_cards_indexes)
